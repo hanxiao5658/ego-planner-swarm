@@ -1,7 +1,7 @@
 <launch>
     <!-- number of moving objects -->
     <arg name="obj_num" value="10" />
-    <arg name="drone_id" value="1"/>
+    <arg name="drone_id" value="0"/>
 
     <arg name="map_size_x" value="10.0"/>
     <arg name="map_size_y" value="10.0"/>
@@ -21,31 +21,22 @@
         <arg name="map_size_z_" value="$(arg map_size_z)"/>
         <arg name="odometry_topic" value="$(arg odom_topic)"/>
         <arg name="obj_num_set" value="$(arg obj_num)" />
-
         <!-- camera pose: transform of camera frame in the world frame -->
         <!-- depth topic: depth image, 640x480 by default -->
         <!-- don't set cloud_topic if you already set these ones! -->
         <arg name="camera_pose_topic" value="null"/>
         <arg name="depth_topic" value="$(arg depth_topic)"/>
-
         <!-- topic of point cloud measurement, such as from LIDAR  -->
         <!-- don't set camera pose and depth, if you already set this one! -->
         <arg name="cloud_topic" value="null"/>
-
         <!-- intrinsic params of the depth camera -->
-        <!--arg name="cx" value="318.96490478515625"/>
+        <arg name="cx" value="318.96490478515625"/>
         <arg name="cy" value="235.956298828125"/>
         <arg name="fx" value="389.4122314453125"/>
-        <arg name="fy" value="389.4122314453125"/-->
-        <arg name="cx" value="317"/>
-        <arg name="cy" value="240.5"/>
-        <arg name="fx" value="383.6"/>
-        <arg name="fy" value="383.3"/>
-
+        <arg name="fy" value="389.4122314453125"/>
         <!-- maximum velocity and acceleration the drone will reach -->
         <arg name="max_vel" value="1" />
-        <arg name="max_acc" value="1" />
-
+        <arg name="max_acc" value="1.5" />
         <!--always set to 1.5 times grater than sensing horizen-->
         <arg name="planning_horizon" value="7.5" />
         <arg name="use_distinctive_trajs" value="true" />

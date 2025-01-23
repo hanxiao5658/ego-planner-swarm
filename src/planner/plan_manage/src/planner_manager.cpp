@@ -219,7 +219,7 @@ namespace ego_planner
     UniformBspline::parameterizeToBspline(ts, point_set, start_end_derivatives, ctrl_pts);
 
     vector<std::pair<int, int>> segments;
-    segments = bspline_optimizer_->initControlPoints(ctrl_pts, true);
+    segments = bspline_optimizer_->initControlPoints(ctrl_pts, true);// 通过A star 搜索
 
     t_init = ros::Time::now() - t_start;
     t_start = ros::Time::now();

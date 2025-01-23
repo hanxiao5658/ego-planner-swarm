@@ -1,5 +1,5 @@
 # Quick Start within 3 Minutes 
-Compiling tests passed on ubuntu **16.04, 18.04, and 20.04** with ros installed.
+Compiling tests passed on ubuntu **16.04, 18.04 and 20.04** with ros installed.
 You can just execute the following commands one by one.
 ```
 sudo apt-get install libarmadillo-dev
@@ -32,7 +32,7 @@ EGO-Swarm: A Fully Autonomous and Decentralized Quadrotor Swarm System in Clutte
 **Video Links:** [YouTube](https://www.youtube.com/watch?v=K5WKg8meb94&ab_channel=FeiGao), [bilibili](https://www.bilibili.com/video/BV1Nt4y1e7KD) (for Mainland China)
 
 ## 1. Related Paper
-EGO-Swarm: A Fully Autonomous and Decentralized Quadrotor Swarm System in Cluttered Environments, Xin Zhou, Jiangchao Zhu, Hongyu Zhou, Chao Xu, and Fei Gao (Published in ICRA2021). [Paper link](https://ieeexplore.ieee.org/abstract/document/9561902) and [Science](https://www.sciencemag.org/news/2020/12/watch-swarm-drones-fly-through-heavy-forest-while-staying-formation) report.
+EGO-Swarm: A Fully Autonomous and Decentralized Quadrotor Swarm System in Cluttered Environments, Xin Zhou, Jiangchao Zhu, Hongyu Zhou, Chao Xu, and Fei Gao (Accepted by ICRA2021). [Preprint](https://arxiv.org/abs/2011.04183v1), [Science report](https://www.sciencemag.org/news/2020/12/watch-swarm-drones-fly-through-heavy-forest-while-staying-formation).
 
 ## 2. Standard Compilation
 
@@ -43,7 +43,7 @@ EGO-Swarm: A Fully Autonomous and Decentralized Quadrotor Swarm System in Clutte
 sudo apt-get install libarmadillo-dev
 ``` 
 
-**Step 2**. Clone the code from github or gitee. These two repositories synchronize automatically.
+**Step 2**. Clone the code from github or gitee. This two repositories synchronize automaticly.
 
 From github,
 ```
@@ -64,7 +64,7 @@ catkin_make -DCMAKE_BUILD_TYPE=Release -j1
 
 **Step 4**. Run.
 
-In a terminal at the _ego-planner-swarm/_ folder, open the rviz for visualization and interactions
+In a terminal at the _ego-planner-swarm/_ folder, open the rviz for visuallization and interactions
 ```
 source devel/setup.bash
 roslaunch ego_planner rviz.launch
@@ -90,7 +90,7 @@ It will take 3 minutes.
 
 **Step 1**. Install C++ and CMake extentions in vscode.
 
-**Step 2**. Re-compile the code using the command
+**Step 2**. Re-compile the code using command
 ```
 catkin_make -DCMAKE_BUILD_TYPE=Release -DCMAKE_EXPORT_COMPILE_COMMANDS=Yes
 ```
@@ -127,7 +127,7 @@ Please remember to also change the 'arch' and 'code' flags in the line of
       -gencode arch=compute_61,code=sm_61;
     ) 
 ``` 
-in _CMakeList.txt_. If you encounter compiling error due to different Nvidia graphics card you use or you can not see proper depth images as expected, you can check the right code via [link1](https://arnon.dk/matching-sm-architectures-arch-and-gencode-for-various-nvidia-cards/) or [link2](https://github.com/tpruvot/ccminer/wiki/Compatibility).
+in _CMakeList.txt_, if you encounter compiling error due to different Nvidia graphics card you use. You can check the right code [here](https://github.com/tpruvot/ccminer/wiki/Compatibility).
  
 Don't forget to re-compile the code!
 
@@ -137,10 +137,10 @@ For installation of CUDA, please go to [CUDA ToolKit](https://developer.nvidia.c
 
 ## 5. Use Drone Simulation Considering Dynamics or Not
 Typical simulations use a dynamic model to calculate the motion of the drone under given commands.
-However, it requires continuous iterations to solve a differential equation, which consumes quite a lot computation.
+However, it requires continous iterations to solver a differential equation, which consumes quite a lot computation.
 When launching a swarm of drones, this computation burden may cause significant lag.
 On an i7 9700KF CPU I use, 15 drones are the upper limit.
-Therefore, for compatibility and scalability purposes, I use a "[fake_drone](https://github.com/ZJU-FAST-Lab/ego-planner-swarm/tree/master/src/uav_simulator/fake_drone)" package to convert commands to drone odometry directly by default.
+Therefore, for compatibility and scalability purposes, I use a "[fake_drone](https://github.com/ZJU-FAST-Lab/ego-planner-swarm/tree/master/src/uav_simulator/fake_drone)" package to convet commands to drone odometry directly by default.
 
 If you want to use a more realistic quadrotor model, you can un-comment the node `quadrotor_simulator_so3` and `so3_control/SO3ControlNodelet` in [simulator.xml](https://github.com/ZJU-FAST-Lab/ego-planner-swarm/blob/master/src/planner/plan_manage/launch/simulator.xml) to enable quadrotor simulation considering dynamics.
 Please don't forget to comment the package `poscmd_2_odom` right after the above two nodes.
@@ -164,7 +164,7 @@ Note that CPU frequency may still decrease due to high temperature in high load.
 <!--
 # Improved ROS-RealSense Driver
 
-We modified the ros-realsense driver to enable the laser emitter strobe every other frame, allowing the device to output high quality depth images with the help of emitter, and along with binocular images free from laser interference.
+We modified the ros-relasense driver to enable the laser emitter strobe every other frame, allowing the device to output high quality depth images with the help of emitter, and along with binocular images free from laser interference.
 
 <p align = "center">
 <img src="pictures/realsense.PNG" width = "640" height = "158" border="5" />
@@ -208,7 +208,7 @@ sudo apt install librealsense2-dev=2.30.0-0~realsense0.1693
 sudo apt remove librealsense2-udev-rules
 sudo apt install librealsense2-udev-rules=2.30.0-0~realsense0.1693
 ``` 
-Here you can verify the installation by 
+Here you can varify the installation by 
 ```
 realsense_viewer
 ```
@@ -225,7 +225,7 @@ Then you will receive depth stream along with binocular stream together at 30Hz 
 # Licence
 The source code is released under [GPLv3](http://www.gnu.org/licenses/) license.
 
-# Maintenance
+# Maintaince
 We are still working on extending the proposed system and improving code reliability. 
 
 For any technical issues, please contact Xin Zhou (iszhouxin@zju.edu.cn) or Fei GAO (fgaoaa@zju.edu.cn).
