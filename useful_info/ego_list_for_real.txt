@@ -1,0 +1,9 @@
+s1
+rosrun rqt_reconfigure rqt_reconfigure
+roslaunch ego_planner rviz.launch
+#check depth is updating
+#takeoff& GUIDED
+#check two box
+
+ rosrun gusu_drone position_input_loop.py // for loop
+ rosrun gusu_drone position_input.py //manually input x,y,z,yaw

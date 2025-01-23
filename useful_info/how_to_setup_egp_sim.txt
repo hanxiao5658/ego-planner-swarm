@@ -1,0 +1,10 @@
+put gazebo_models into .gazebo
+
+put iris_stereo.launch into gazebo_ros 
+(gazebo_ros is in /opt/ros/noetic/share/gazebo_ros, if cannot find, use search in other_location computer)
+
+check #SITL for Ardupilot location 
+
+check topic name in run_in_gazebo.launch
+run_in_gazebo.launch is in
+/catkin_ws/src/ego_planner/ego-planner-swarm/src/planner/plan_manage/launch 
