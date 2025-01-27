@@ -1,0 +1,13 @@
+<launch>
+  <!-- my launch file for sim -->
+  <!-- MAVROS for SIM -->
+  <!-- include file="$(find gusu_drone)/launch/apm_sim.launch" /-->
+  <include file="$(find ego_planner)/launch/my_rviz.launch" />
+
+  <!-- transform livox customsg to Pointcloud2" /-->
+  <include file="$(find ego_planner)/launch/my_single_run_in_gazebo.launch" />
+  
+  <!-- acc control for ego -->
+  <node name="my_ego_acc_controller" pkg="gusu_drone" type="my_ego_control.py" />
+  
+</launch>
