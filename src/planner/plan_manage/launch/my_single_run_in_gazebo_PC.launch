@@ -5,7 +5,7 @@
 
     <arg name="map_size_x" value="50.0"/>
     <arg name="map_size_y" value="50.0"/>
-    <arg name="map_size_z" value="10"/>
+    <arg name="map_size_z" value="50"/>
     <arg name="target_x" default="12"/>
     <arg name="target_y" default="1"/>
     <arg name="target_z" default="1.5"/>
@@ -13,12 +13,12 @@
     <arg name="odom_topic" value="/drone1/mavros/local_position/odom"/>
     <arg name="camera_pose_topic" value="/drone1/mavros/mocap/pose"/>
     <arg name="depth_topic" value="null"/>
-    <arg name="cloud_topic" value="/camera/depth/color/points"/>
+    <arg name="cloud_topic" value="/drone1/livox/lidar_PC2_ground"/>
 
     <arg name="cmd_topic" value="planning/pos_cmd"/>
 
     <!-- main algorithm params -->
-    <include file="$(find ego_planner)/launch/my_advanced_param_gazebo.xml">
+    <include file="$(find ego_planner)/launch/my_advanced_param_gazebo_PC.xml">
         <arg name="drone_id" value="$(arg drone_id)"/>
         <arg name="map_size_x_" value="$(arg map_size_x)"/>
         <arg name="map_size_y_" value="$(arg map_size_y)"/>
